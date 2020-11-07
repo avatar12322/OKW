@@ -1,0 +1,347 @@
+{
+  "nodes": [
+    {
+      "type": "command",
+      "name": "help",
+      "guid": "7942fe4c-dffa-4146-8cab-d254b3d80d5d",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "37eda463-a170-44f9-af54-61378ffc9294"
+          ]
+        }
+      ],
+      "x": 148,
+      "y": 188
+    },
+    {
+      "type": "command",
+      "name": "info",
+      "guid": "2224944a-561a-4fa1-824b-2f31ea37c836",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "5053a44d-4a5e-460a-974d-da0cc07aac7c"
+          ]
+        }
+      ],
+      "x": 142,
+      "y": 340,
+      "perms": []
+    },
+    {
+      "type": "response",
+      "name": "help menu",
+      "guid": "37eda463-a170-44f9-af54-61378ffc9294",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "!help",
+          "value": "Shows this menu",
+          "inline": "true"
+        },
+        {
+          "name": "!info",
+          "value": "Shows some info",
+          "inline": "true"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "7942fe4c-dffa-4146-8cab-d254b3d80d5d"
+        }
+      ],
+      "x": 345,
+      "y": 182,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "1FFF57",
+        "Help Menu",
+        "",
+        "Bot Name Here",
+        "",
+        "",
+        "This is the embed description, replace this with some info about your bot!",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "show info",
+      "guid": "5053a44d-4a5e-460a-974d-da0cc07aac7c",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "2224944a-561a-4fa1-824b-2f31ea37c836"
+        }
+      ],
+      "x": 360,
+      "y": 324,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.DefaultChannel.id}",
+        "Command Author: ${dbsVars.CommandAuthor.displayName}\nTagged author: <@${dbsVars.CommandAuthor.id}>\nYou can insert more values by clicking the \"Insert Variable\" button next to this field!",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "mecz",
+      "guid": "74d26612-0878-4357-b647-fb742b50af7f",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "06bf4fa5-6459-4e7c-a78c-63fb4a05c95e",
+            "295194b9-710e-43c9-9bab-fe20b0ff480a"
+          ]
+        }
+      ],
+      "x": 104,
+      "y": 595,
+      "perms": []
+    },
+    {
+      "type": "response",
+      "name": "tekst meczu",
+      "guid": "8a7d5f87-9bc2-4560-a23c-2958d6b36d45",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "767c0560-f79f-463d-aa48-bd277d38e0a9"
+        }
+      ],
+      "x": 786,
+      "y": 449,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "role",
+        "| @everyone\n|\n|\n| Uwaga nowy mecz dnia: ${globalVars.data} o godzinie: ${tempVars.godzina}\n| Żeby potwierdzić obecność należy wpisać swoją rolę na kanale anmeldung-zur-veranstaltung odpowiednią komendą\n| Komendy znajdują się na kanale",
+        "",
+        "server"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "skład",
+      "guid": "295194b9-710e-43c9-9bab-fe20b0ff480a",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "74d26612-0878-4357-b647-fb742b50af7f"
+        }
+      ],
+      "x": 492,
+      "y": 597,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "ogólne",
+        "${globalVars.data}\nAssault(Gwr43 lub Mp40)- \nAutomatic riflemen(Stg44 lub Mp40)- \nMedic(Kar98K)- \nAntiTank(Kar98k lub Mp40)-          \nMachine Gunner(MG42) - ",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "data",
+      "guid": "06bf4fa5-6459-4e7c-a78c-63fb4a05c95e",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "data",
+      "saveToVariableType": "global",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "767c0560-f79f-463d-aa48-bd277d38e0a9"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "74d26612-0878-4357-b647-fb742b50af7f"
+        }
+      ],
+      "x": 405,
+      "y": 456,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "data",
+        "Text",
+        "global",
+        "1"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "godzina",
+      "guid": "767c0560-f79f-463d-aa48-bd277d38e0a9",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "godzina",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "8a7d5f87-9bc2-4560-a23c-2958d6b36d45"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "06bf4fa5-6459-4e7c-a78c-63fb4a05c95e"
+        }
+      ],
+      "x": 599,
+      "y": 452,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "godzina",
+        "Text",
+        "temp",
+        "2"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "czystka",
+      "guid": "c904787e-8581-49b6-8681-9933f1216645",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "f757e6bd-e24d-424b-9a3a-98a2e0994c7d"
+          ]
+        }
+      ],
+      "x": 156,
+      "y": 89
+    },
+    {
+      "type": "response",
+      "name": "usuwanie",
+      "guid": "f757e6bd-e24d-424b-9a3a-98a2e0994c7d",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "c904787e-8581-49b6-8681-9933f1216645"
+        }
+      ],
+      "x": 342,
+      "y": 73,
+      "rtype": "Channel Action",
+      "rsubtype": "Delete All Messages",
+      "formdata": [
+        "ogólne",
+        "100"
+      ],
+      "formnames": [
+        "channelname",
+        "msgcount"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "command": [
+    {
+      "name": "help",
+      "actions": [
+        {
+          "name": "help menu",
+          "category": "Message",
+          "type": "Send Embed",
+          "fields": [
+            {
+              "name": "!help",
+              "value": "Shows this menu",
+              "inline": "true"
+            },
+            {
+              "name": "!info",
+              "value": "Shows some info",
+              "inline": "true"
+            }
+          ],
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "1FFF57",
+          "title": "Help Menu",
+          "url": "",
+          "authorname": "Bot Name Here",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "This is the embed description, replace this with some info about your bot!",
+          "thumbnail": "",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    },
+    {
+      "name": "info",
+      "perms": [],
+      "actions": [
+        {
+          "name": "show info",
+          "category": "Message",
+          "type": "Send Message",
+          "channelname": "${dbsVars.DefaultChannel.id}",
+          "messagetext": "Command Author: ${dbsVars.CommandAuthor.displayName}\nTagged author: <@${dbsVars.CommandAuthor.id}>\nYou can insert more values by clicking the \"Insert Variable\" button next to this field!",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    },
+    {
+      "name": "mecz",
+      "perms": [],
+      "actions": [
+        {
+          "name": "data",
+          "category": "Variable",
+          "type": "Store Value in Variable",
+          "varname": "data",
+          "vartype": "Text",
+          "savevartype": "global",
+          "param": "1"
+        },
+        {
+          "name": "skład",
+          "category": "Message",
+          "type": "Send Message",
+          "channelname": "ogólne",
+          "messagetext": "${globalVars.data}\nAssault(Gwr43 lub Mp40)- \nAutomatic riflemen(Stg44 lub Mp40)- \nMedic(Kar98K)- \nAntiTank(Kar98k lub Mp40)-          \nMachine Gunner(MG42) - ",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        },
+        {
+          "name": "godzina",
+          "category": "Variable",
+          "type": "Store Value in Variable",
+          "varname": "godzina",
+          "vartype": "Text",
+          "savevartype": "temp",
+          "param": "2"
+        },
+        {
+          "name": "tekst meczu",
+          "category": "Message",
+          "type": "Send Message",
+          "channelname": "role",
+          "messagetext": "| @everyone\n|\n|\n| Uwaga nowy mecz dnia: ${globalVars.data} o godzinie: ${tempVars.godzina}\n| Żeby potwierdzić obecność należy wpisać swoją rolę na kanale anmeldung-zur-veranstaltung odpowiednią komendą\n| Komendy znajdują się na kanale",
+          "savetovariable": "",
+          "savetovariabletype": "server"
+        }
+      ]
+    },
+    {
+      "name": "czystka",
+      "actions": [
+        {
+          "name": "usuwanie",
+          "category": "Channel Action",
+          "type": "Delete All Messages",
+          "channelname": "ogólne",
+          "msgcount": "100"
+        }
+      ]
+    }
+  ]
+}
